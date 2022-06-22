@@ -33,13 +33,17 @@
 
 4. Why are tuples faster than lists?  
     Tuples are faster than lists because:
+   
    - Tuples can be constant folded.
-- Tuples can be reused instead of copied.
-- Tuples are compact and don't over-allocate.
-- Tuples directly reference their elements.  
-  Read the first two answers on this thread - 
-  [Tuples faster than lists - Stack Overflow](https://stackoverflow.com/questions/3340539/why-is-tuple-faster-than-list-in-python)
-
+   
+   - Tuples can be reused instead of copied.
+   
+   - Tuples are compact and don't over-allocate.
+   
+   - Tuples directly reference their elements.  
+     Read the first two answers on this thread - 
+     [Tuples faster than lists - Stack Overflow](https://stackoverflow.com/questions/3340539/why-is-tuple-faster-than-list-in-python)
+   
 ----------------------------
 
 5. What is the difference between `is` and `==`?  
@@ -59,7 +63,7 @@
 
 ----------------------------
 
-7. Why lists can't be dictionary keys?  
+7. Why can't lists be dictionary keys?  
    If lists are hashed by their ids -
    
    - Looking up different lists with the same contents would produce different results, even though comparing lists with the same contents would indicate them as equivalent.
@@ -240,7 +244,7 @@
     [10, 20]
     ```
     
-    [How to avoid above issue - Stack Overflow](https://stackoverflow.com/questions/366422/what-is-the-pythonic-way-to-avoid-default-parameters-that-are-empty-lists)
+    [How to avoid the above issue - Stack Overflow](https://stackoverflow.com/questions/366422/what-is-the-pythonic-way-to-avoid-default-parameters-that-are-empty-lists)
     
     [Python Gotchas -  Python Guide](https://docs.python-guide.org/writing/gotchas/#mutable-default-arguments)
 
@@ -324,7 +328,7 @@
     An iterator protocol is nothing but a specific class in Python which further has the `__iter__()`  and `__next__()`  methods.  
     [Python Iterators: A Step-By-Step Introduction – dbader.org](https://dbader.org/blog/python-iterators)
     
-    [Step by Step Guide on Iterators (Broken)](https://www.mygreatlearning.com/blog/iterator-in-python/)
+    [Step by Step Guide on Iterators](https://www.mygreatlearning.com/blog/iterator-in-python/)
     
     ```python
     # A custom fibonacci iterator
@@ -339,7 +343,7 @@
             return self
     
         def __next__(self):        
-            while self.start_a <= selxxf.stop:
+            while self.start_a <= self.stop:
                 result = self.start_a
                 self.start_a, self.start_b = self.start_b, self.start_a + self.start_b
                 return result
@@ -357,6 +361,8 @@
     An _iterable_ is an object that has an `__iter__` method which returns an iterator, or which defines a `__getitem__` method that can take sequential indexes starting from zero (and raises an `IndexError` when the indexes are no longer valid). So an iterable is an object that you can get an iterator from.  
     An _iterator_ is an object with a `next` (Python 2) or `__next__` (Python 3) method.  
     [Iterable vs Iterator vs Iteration - Stack Overflow](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)
+    
+    [Iterators vs Generators - Stack Overflow](https://stackoverflow.com/questions/2776829/difference-between-pythons-generators-and-iterators)
 
 ----------------------------
 
@@ -373,10 +379,9 @@
     The context manager object results from evaluating the `expression` after `with`. In other words, `expression` must return an object that implements the **context management protocol**. This protocol consists of two special methods:
     
     1. [`.__enter__()`](https://docs.python.org/3/library/stdtypes.html#contextmanager.__enter__) is called by the `with` statement to enter the runtime context.
-       
-       2. [`.__exit__()`](https://docs.python.org/3/library/stdtypes.html#contextmanager.__exit__) is called when the execution leaves the `with` code block.
-       
-       [Python With Statement - Real Python](https://realpython.com/python-with-statement/)
+    2. [`.__exit__()`](https://docs.python.org/3/library/stdtypes.html#contextmanager.__exit__) is called when the execution leaves the `with` code block.
+    
+    [Python With Statement - Real Python](https://realpython.com/python-with-statement/)
 
 ----------------------------
 
